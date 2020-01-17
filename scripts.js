@@ -165,7 +165,7 @@ function addPlayer(name, count, color) {
   playersElem.innerHTML +=
       `<div class="setting-field player">
         <label>Имя <input type="text" value="${ name || 'Введите имя' }" data-name></label>
-        <label>Количество <input type="number" class="input-count" value="${ count || 1 }" data-count></label>
+        <label>Количество <input type="number" class="input-count" value="${ count || 0 }" data-count></label>
         <label>Цвет <input type="color" value="${ color || '#000000' }" data-color></label>
         <button class="btn-remove-player">-</button>
       </div>`
@@ -176,9 +176,9 @@ function saveSettings() {
   initPlayers = [];
   const playersElems = document.getElementsByClassName('player');
   [].forEach.call(playersElems, row => {
-    const name = row.querySelectorAll('[data-name]')[0].value;
-    const count = +row.querySelectorAll('[data-count]')[0].value;
-    const color = row.querySelectorAll('[data-color]')[0].value;
+    const name = row.querySelectorAll('[data-name]')[0].value || 'Unnamed';
+    const count = +row.querySelectorAll('[data-count]')[0].value || 0;
+    const color = row.querySelectorAll('[data-color]')[0].value || '#000000';
 
     players.push({ name, count, color });
   });
