@@ -1,11 +1,10 @@
 body {
     box-sizing: border-box;
-    min-height: calc(100vh - 20px);
     margin: 10px calc(-1 * (100vw - 100%) + 10px) 10px 10px;
-    /*background-color: #470909;*/
 }
 
 .page {
+    min-height: calc(100vh - 20px);
     position: relative;
 }
 
@@ -173,4 +172,10 @@ body {
     100% {
         transform: translate(-50%, -50%) scale(0);
     }
+}
+
+.version {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
