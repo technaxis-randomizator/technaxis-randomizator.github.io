@@ -1,0 +1,176 @@
+body {
+    box-sizing: border-box;
+    min-height: calc(100vh - 20px);
+    margin: 10px calc(-1 * (100vw - 100%)) 10px 10px;
+    /*background-color: #470909;*/
+}
+
+.page {
+    position: relative;
+}
+
+#btm-reset-local-storage {
+    position: absolute;
+    top: 0;
+    right: 12px;
+    font-size: 12px;
+}
+
+#settings {
+    max-width: 500px;
+    margin: 0 auto;
+    max-height: 500px;
+    overflow: hidden;
+    transition: 400ms all;
+}
+
+#settings.close {
+    max-height: 0;
+}
+
+.setting-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.setting-field:last-child {
+    margin-bottom: 0;
+}
+
+#players {
+    margin-bottom: 12px;
+}
+
+.input-count {
+    max-width: 40px;
+}
+
+#container-wrapper {
+    padding-top: 120px;
+    position: relative;
+}
+
+#container-wrapper.open {
+    padding-top: 0;
+}
+
+#container-wrapper.open > .play {
+    pointer-events: auto;
+}
+
+#container-wrapper.game > .play {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% + 45px), -50%);
+    border: 70px solid transparent;
+    border-left: 110px solid white;
+    transition: 300ms all;
+    pointer-events: none;
+}
+
+.play {
+    cursor: pointer;
+}
+
+.play:hover {
+    transform: translate(calc(-50% + 45px), -50%) scale(1.1);
+}
+
+#container {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    transition: 300ms all;
+    border: 10px solid #470909;
+    border-radius: 100%;
+    /*transform: scale(0);*/
+    transform: rotateX(90deg);
+}
+
+#container.open {
+    /*transform: scale(1);*/
+    transform: rotateX(0deg);
+}
+
+#container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #470909;
+    z-index: 1;
+}
+
+#container:after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 10px solid transparent;
+    border-top: 10px solid #470909;
+    z-index: 1;
+}
+
+#canvas {
+    display: block;
+}
+
+#button-init {
+    display: block;
+    font-size: 40px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 300ms all;
+}
+
+#button-init.settings-close {
+    font-size: 20px;
+    top: 0;
+    left: 12px;
+    transform: translateX(0);
+}
+
+#fight {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: 500ms all;
+    transform: translate(-50%, -50%) scale(0);
+    max-width: 100vw;
+}
+
+#container-wrapper.game > #fight {
+    animation-name: fight;
+    animation-duration: 1000ms;
+}
+
+@keyframes fight {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    30% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    80% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}

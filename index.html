@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RandomiZator</title>
+
+  <link href="./styles.css" rel="stylesheet">
+  <script src="scripts.js"></script>
+</head>
+<body>
+<div class="page">
+  <button id="btm-reset-local-storage">reset localStorage</button>
+
+  <div id="settings">
+    <div id="players">
+
+    </div>
+
+    <button id="btn-add-player">+</button>
+
+    <div class="setting-field"></div>
+    <div class="setting-field"></div>
+
+    <div class="setting-field">
+      <label>Размер барабана (px) <input type="number" class="input-count" value="600" data-size></label>
+      <label>Размер шрифта (px) <input type="number" class="input-count" value="45" data-font-size></label>
+      <label>Отступ шрифта слева (px) <input type="number" class="input-count" value="110" data-font-padding-left></label>
+    </div>
+  </div>
+
+  <div id="container-wrapper">
+    <button id="button-init">SAVE and INIT</button>
+
+    <div id="container">
+      <canvas id="canvas"></canvas>
+    </div>
+
+    <div id="play" class="play"></div>
+
+    <img id="fight" src="./fight.png">
+  </div>
+</div>
+</body>
+</html>
